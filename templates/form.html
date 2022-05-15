@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+
+<body>
+    <form method="post">
+    <div class="cont">
+        <div class="form sign-in">
+          <h2>Welcome back,</h2>
+          <label>
+            <span>First Name</span>
+            <input type="text" name="fname" />
+          </label>
+          <label>
+            <span>Last Name</span>
+            <input type="text" name="lname"/>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email"/>
+          </label>
+          <label>
+            <span>Desc</span>
+            <input type="text" name="desc"/>
+          </label>
+          <!-- <p class="forgot-pass">Forgot password?</p> -->
+          <button type="submit" class="submit">Add</button>
+          <button type="button" class="fb-btn"><a href="/">Go to <span>Home</span></a></button>
+        </div>
+    </form>
+        <div class="sub-cont">
+          <div class="img">
+            <div class="img__text m--up">
+              <h2>New here?</h2>
+              <p>Create your Student User! Give your details correct</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <a href="https://github.com/ravikisha" target="_blank" class="icon-link">
+        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-128.png">
+      </a>
+      <a href="https://instagram.com/ravikishan.69" target="_blank" class="icon-link icon-link--twitter">
+        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/instagram-128.png">
+      </a>
+    <script>
+        $(document).ready(function(){
+   $(".container").fadeIn(1000);
+   $(".s2class").css({"color":"#EE9BA3"});
+   $(".s1class").css({"color":"#748194"}); 
+   $("#left").removeClass("left_hover");
+   $("#right").addClass("right_hover");
+   $(".signin").css({"display":"none"});
+   $(".signup").css({"display":""});
+});
+$("#right").click(function(){
+   $("#left").removeClass("left_hover");
+   $(".s2class").css({"color":"#EE9BA3"});
+   $(".s1class").css({"color":"#748194"});
+   $("#right").addClass("right_hover");
+   $(".signin").css({"display":"none"});
+   $(".signup").css({"display":""});
+});
+$("#left").click(function(){
+   $(".s1class").css({"color":"#EE9BA3"});
+   $(".s2class").css({"color":"#748194"}); 
+   $("#right").removeClass("right_hover");
+   $("#left").addClass("left_hover");
+   $(".signup").css({"display":"none"});
+   $(".signin").css({"display":""});
+});
+    </script>
+</body>
+
+</html>

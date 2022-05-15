@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+
+<body>
+<form method="post">
+    <div class="cont">
+        <div class="form sign-in">
+          <h2>Welcome back,</h2>
+          <label>
+            <span>First Name</span>
+            <input type="text" name="fname" value={{student.firstname}} />
+          </label>
+          <label>
+            <span>Last Name</span>
+            <input type="text" name="lname" value={{student.lastname}} />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" value={{student.email}} />
+          </label>
+          <label>
+            <span>Desc</span>
+            <input type="text" name="desc" value={{student.desc}} />
+          </label>
+          <!-- <p class="forgot-pass">Forgot password?</p> -->
+          <button type="submit" class="submit">Update</button>
+          <button type="button" class="fb-btn"><a href="/">Go to <span>Home</span></a></button>
+        </div>
+    </form>
+        <div class="sub-cont">
+          <div class="img">
+            <div class="img__text m--up">
+              <h2>New here?</h2>
+              <p>Edit your Personal Details!</p>
+            </div>
+            <div class="img__text m--in">
+              <h2>One of us?</h2>
+              <p>If You don't Want to edit just go back to HOME!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- <form  method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" value={{student.firstname}} id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" value={{student.lastname}} id="lname" name="lname"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" value={{student.email}} id="email" name="email"><br>
+        <label for="desc">Desc:</label><br>
+        <input type="text" value={{student.desc}} id="desc" name="desc">
+        <input type="submit" value="Submit">
+    </form> -->
+</body>
+
+</html>

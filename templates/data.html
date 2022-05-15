@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    {% if students %}
+    {% for student in students %}
+    <div class="wrapper">
+        <div class="img-area">
+            <div class="inner-area">
+                <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="">
+            </div>
+        </div>
+        
+        <div class="icon dots"><img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/edit-30.png"></div>
+        <div class="name">{{ student.firstname }} {{ student.lastname }}</div>
+        <div class="about">{{student.desc}}</div>
+
+        <div class="buttons">
+            <button><a href="{{ url_for('edit', student_id=student.id) }}">Edit</a></button>
+            <form method="POST"
+                action="{{ url_for('delete', student_id=student.id) }}">
+            <button type="sumbit"
+                onclick="return confirm('Are you sure you want to delete this entry?')">Delete</button>
+        </form>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h1>Not Found</h1>
+    {% endif %}
+    <a href="/form"class="float">
+        <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/plus-60.png">
+      </a>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- <div class="container">
+<h1>Student Data</h1>
+{% if students %}
+    {% for student in students %}
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<h5 class="card-title">#{{student.id}}</h5>
+<h6 class="card-subtitle mb-2 text-muted">{{ student.firstname }} {{ student.lastname }}</h6>
+<button class="card-text btn btn-primary link-btn" type="button"><a href="{{ url_for('student', student_id=student.id)}}">
+                    Get Details
+                </a>
+            </button>
+<a href="#" class="card-link">Card link</a>
+<a href="#" class="card-link">Another link</a>
+</div>
+</div>
+{% endfor %}
+{% else %}
+<h1>Not Found</h1>
+{% endif %}
+<a href="/form">Add Student</a> -->
